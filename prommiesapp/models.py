@@ -29,8 +29,6 @@ class Prommies(models.Model):
         self.my_file = update.my_file
         self.save()
 
-    
-
     def __str__(self):
         return self.name
 
