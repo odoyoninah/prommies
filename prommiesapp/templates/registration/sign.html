@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form</title>
+    {% block styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    {% endblock %}
+    
+</head>
+
+</head>
+<body class="sign">
+    {% include "navbar.html" %}  
+    <h1>Sign Up</h1>
+    <div class= "picha">
+        <img src="https://images.unsplash.com/photo-1642480485642-63b9018eadc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGluc3RhZ3JhbSUyMGFwcCUyMHByb2ZpbGUlMjBvbiUyMHBob25lc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+</div> 
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-6">
+          
+            
+            <form method="post">
+             
+                {% load crispy_forms_tags %}
+                {% csrf_token %}
+                {{ form|crispy }}
+               
+                <input type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
