@@ -1,7 +1,7 @@
 from email.mime import image
 from os import link
-import profile
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Prommies(models.Model):
@@ -33,7 +33,7 @@ class Prommies(models.Model):
         return self.name
 
 class Profile(models.Model):
-    user = models.OneToOneField(profile.User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/', default='images/default.png')
     bio = models.TextField(default='This is your bio')
     birth_date = models.DateField(null=True, blank=True)
