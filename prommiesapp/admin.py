@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Prommies, Profile
 
-# Register your models here.
+admin.site.register(Prommies)
+admin.site.register(Profile)
+
