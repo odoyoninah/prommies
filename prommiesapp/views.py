@@ -9,9 +9,10 @@ from django.http import HttpResponse
 from django.views import View
 from django.contrib import messages
 
-def index(request):
-    prommies=Prommies.objects.all()
-    return render(request,'index.html',{'prommies':prommies})
+def index(view):
+    def get(self, request):
+        form = PrommiesForm()
+        return render(request, 'index.html',{'form':form})
 
 @login_required(login_url='/accounts/login/')
 def createpost(request):
