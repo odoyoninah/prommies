@@ -1,14 +1,13 @@
+import email
 from django.forms import Form
-from.forms import PrommiesForm, RegisterForm
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate,logout
-from django.shortcuts import render, redirect
-from .models import Prommies, Profile
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.views import View
+from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from .models import Prommies, User,Image,Comment,Like,Follow
+from .forms import ImageForm, PrommiesForm, RegisterForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     prommies=Prommies.objects.all()
