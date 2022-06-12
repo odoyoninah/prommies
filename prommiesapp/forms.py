@@ -10,10 +10,10 @@ class PrommiesForm(forms.ModelForm):
         model = Prommies
         fields = ['name', 'description', 'score', 'link', 'image', 'email', 'my_file']
 
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['name', 'email', 'phone', 'address', 'image']
+# class ProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = Profile
+#         fields = ['name', 'email', 'phone', 'address', 'image']
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()

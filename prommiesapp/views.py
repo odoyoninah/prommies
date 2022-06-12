@@ -1,4 +1,4 @@
-from.forms import PrommiesForm, ProfileForm, RegisterForm
+from.forms import PrommiesForm, RegisterForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
