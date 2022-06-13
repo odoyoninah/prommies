@@ -5,8 +5,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import Prommies, User,Image,Comment,Like,Follow
-from .forms import ImageForm, PrommiesForm, RegisterForm
+from .models import Prommies, User
+from .forms import PrommiesForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 
 def index(request):
@@ -14,7 +14,7 @@ def index(request):
     return render(request,'index.html',{'form':Form})
 
 @login_required(login_url='/accounts/login/')
-def createpost(request):
+def uploadproject(request):
     if request.method=='POST':
         form = PrommiesForm(request.POST,request.FILES)
         if form.is_valid():
@@ -24,7 +24,7 @@ def createpost(request):
             return redirect('index')
     else:
         form = PrommiesForm()
-    return render(request,'createpost.html',{'form':form}) 
+    return render(request,'uploadproject.html',{'form':form}) 
 
 
 def signup(request):
