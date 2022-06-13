@@ -12,6 +12,11 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     prommies=Prommies.objects.all()
     return render(request,'index.html',{'form':Form})
+    
+@login_required
+def projectsposted(request):
+    prommies=Prommies.objects.all()
+    return render(request,'projectsposted.html',{'prommies':prommies})
 
 @login_required(login_url='/accounts/login/')
 def uploadproject(request):

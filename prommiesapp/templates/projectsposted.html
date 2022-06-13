@@ -11,28 +11,17 @@
      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css" integrity="sha384-zIaWifL2YFF1qaDiAo0JFgsmasocJ/rqu7LKYH8CoBEXqGbb9eO+Xi3s6fQhgFWM" crossorigin="anonymous">
      {% endblock %}
-    <title>Create a Project</title>
-   
+    <title>Projects Posted</title>
 
 </head>
-
 <body>
     {% include "navbar.html" %}
-
-    <h1>Upload a project</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                    <form method="post" enctype="multipart/form-data">
-                        {% load crispy_forms_tags %}
-                        {% csrf_token %}
-                        {{ form|crispy }}
+    {% for message in messages %}
+        <div class="alert alert-{{message.type}}">
+            {{message.text}}
+        
+        </div>
+    {% endfor %}
     
-                        <button type="submit" class="btn btn-primary">Create</button>
-                
-                    </form>
-            
-                </div>
-        </div>   
 </body>
 </html>
