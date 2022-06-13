@@ -22,10 +22,9 @@ class Prommies(models.Model):
         self.name = update.name
         self.description = update.description
         self.score = update.score
-        self.link = update.link
+        self.url = update.url
         self.image = update.image
         self.email = update.email
-        self.my_file = update.my_file
         self.save()
 
     def __str__(self):

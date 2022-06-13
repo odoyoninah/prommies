@@ -12,12 +12,12 @@ from django.contrib.auth.decorators import login_required
 class PrommiesForm(forms.ModelForm):
     class Meta:
         model = Prommies
-        fields = ['name', 'description', 'score', 'link', 'image', 'email', 'my_file']
+        fields = ['name', 'description', 'score', 'image', 'email']
 
-# class ProfileForm(forms.ModelForm):
-#     class Meta:
-#         model = Profile
-#         fields = ['name', 'email', 'phone', 'address', 'image']
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['user', 'image', 'bio', 'birth_date', 'mobile', 'project']
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
