@@ -22,6 +22,41 @@
         
         </div>
     {% endfor %}
+
+    <h1>Projects Posted</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Project Description</th>
+                            <th>Project Image</th>
+                            <th>Project Link</th>
+                            <th>Project Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for project in projects %}
+                            <tr>
+                                <td>{{project.name}}</td>
+                                <td>{{project.description}}</td>
+                                <td><img src="{{project.image}}" alt="{{project.name}}" width="100" height="100"></td>
+                                <td>{{project.link}}</td>
+                                <td>{{project.date}}</td>
+                                <td>
+                                    <a href="{{project.id}}/edit" class="btn btn-primary">Edit</a>
+                                    <a href="{{project.id}}/delete" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
     
 </body>
 </html>
