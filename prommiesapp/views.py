@@ -15,7 +15,7 @@ from rest_framework import status
 from .models import Prommies
 from .serializer import PrommiesSerializer, ProfileSerializer
 
-class Prommies(APIView):
+class PrommiesView(APIView):
      #APIView as a base class for our API view function.
     def get(self, request, format=None):
         #define a get method where we query the database to get all the MoringaMerchobjects
