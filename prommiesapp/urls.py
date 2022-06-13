@@ -4,6 +4,7 @@ from django.contrib import admin
 from . import views
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('signup/', views.signup, name='signup'),

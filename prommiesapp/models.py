@@ -8,10 +8,9 @@ class Prommies(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     score = models.IntegerField(default=0)
-    link = models.CharField(max_length=100)
     image = models.ImageField(upload_to='images/')
     email = models.EmailField()
-    my_file = models.FileField(upload_to='doc')
+    url = models.URLField(max_length=200)
 
     def save_prommies(self):
         self.save()
@@ -33,7 +32,7 @@ class Prommies(models.Model):
         return self.name
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/', default='images/default.png')
     bio = models.TextField(default='This is your bio')
     birth_date = models.DateField(null=True, blank=True)
