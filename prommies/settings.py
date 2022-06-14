@@ -83,10 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'prommies',
-        'USER': 'cotton',
+        'USER': 'moringa',
         'PASSWORD': 'Access',
         'HOST': 'localhost',
-        
+
     }
 }
 
