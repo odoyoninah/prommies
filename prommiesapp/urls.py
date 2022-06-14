@@ -12,7 +12,6 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('account/', include('django.contrib.auth.urls')), 
     path('uploadproject/', views.uploadproject, name='uploadproject'),
-    path('projectsposted/', views.projectsposted, name='projectsposted'),
     path('api/prommies/',views.PrommiesView.as_view()),
 ]
 

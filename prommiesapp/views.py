@@ -39,10 +39,6 @@ def index(request):
     prommies=Prommies.objects.all()
     return render(request,'index.html',{'form':Form})
     
-@login_required
-def projectsposted(request):
-    prommies=Prommies.objects.all()
-    return render(request,'projectsposted.html',{'prommies':prommies})
 
 
 
@@ -70,6 +66,7 @@ def signup(request):
    
 
         return redirect('login')
+        
     else:    
         form = RegisterForm()
     return render(request,'registration/signup.html',{'form':form})
