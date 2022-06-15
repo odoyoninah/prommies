@@ -16,6 +16,7 @@ urlpatterns = [
     path('api/profile/',views.ProfileView.as_view()),
     path('apikey/',views.apikey,name='apikey'),
     path('profile/',views.profile,name='profile'),
+    path('projects/',views.projects,name='projects'),
 ]
 
 if settings.DEBUG:

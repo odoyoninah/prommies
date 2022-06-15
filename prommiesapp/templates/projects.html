@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API ENDPOINT</title>
-
     {% block styles %}
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -27,47 +25,30 @@
     />
     {% endblock %}
     
+    <title>Projects</title>
 </head>
 <body>
     {% include "navbar.html" %}
-    <div class="api">
-    <div class="row">
-        <div class="col-sm-5">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Project Api Endpoint</h5>
-              <p class="card-text">{
-                "name": "Instaclone",
-                "description": "A clone of the instagram app where users get to post their photos,get to see other photos ,like and comment on the photos.",
-                "score": 25,
-                "image": "/media/images/mourizal-zativa-_rSRv9T98G4-unsplash_MRs5x2a.jpg",
-                "email": "odoyoninah@gmail.com",
-                "url": "http://ninsclone.herokuapp.com/"
-            },.</p>
-              <a href="{% url 'apikey' %}" class="btn btn-secondary">Copy</a>
-            </div>
+    <h1>Projects</h1>
+    <div class="ies">
+        {% for prommies in prommies %}
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{prommies.image}}" class="img-fluid rounded-start" alt="...">
           </div>
-        </div>
-        <div class="col-sm-5">
-          <div class="card">
+          <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Profile Api Endpoint</h5>
-              <p class="card-text">{
-                "user": 2,
-                "image": "/media/profile_pics/default.jpg",
-                "bio": "Dog lover!",
-                "birth_date": "1998-07-04",
-                "mobile": "0792408121",
-                "project": 4
-            }</p>
-              <a href="{% url 'apikey' %}" class="btn btn-secondary">Copy</a>
+              <h5 class="card-title">{{prommies.name}}</h5>
+              <p class="card-text">{{prommies.description.url}}</p>
+              <p class="card-text"><small class="text-active">{{prommies.url}}</small></p>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-
-
+    
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

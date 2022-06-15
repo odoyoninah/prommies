@@ -73,6 +73,10 @@ def apikey(request):
     return render(request,'apikey.html')
 
 
+def projects(request):
+    return render(request,'projects.html')
+
+
 
 @login_required(login_url='/accounts/login/')
 def uploadproject(request):
@@ -82,7 +86,7 @@ def uploadproject(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('index')
+            return redirect('projects')
     else:
         form = PrommiesForm()
     return render(request,'uploadproject.html',{'form':form}) 
