@@ -14,6 +14,7 @@ urlpatterns = [
     path('uploadproject/', views.uploadproject, name='uploadproject'),
     path('api/prommies/',views.PrommiesView.as_view()),
     path('apikey/',views.apikey,name='apikey'),
+    path('profile/',views.profile,name='profile'),
 ]
 
 if settings.DEBUG:

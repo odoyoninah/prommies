@@ -1,4 +1,5 @@
 import email
+from multiprocessing import context
 from django.forms import Form
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -41,6 +42,13 @@ def index(request):
 
 def apikey(request):
     return render(request,'apikey.html')
+
+def profile(request):
+    context = {
+        'user': request.user,
+        'profile': request.user.profile
+    }
+    return render(request, 'profile.html', context)
     
 
 
