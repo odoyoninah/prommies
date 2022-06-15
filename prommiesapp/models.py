@@ -51,3 +51,22 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+# class Review(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     prommies = models.ForeignKey(Prommies, on_delete=models.CASCADE)
+#     text = models.TextField()
+#     rate = models.IntegerField( default=0)
+#     comment = models.CharField(max_length=200)
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+
+#     def save_review(self):
+#         self.save()
+
+#     def delete_review(self):
+#         self.delete()
+
+#     def __str__(self):
+#         return str(self.username)

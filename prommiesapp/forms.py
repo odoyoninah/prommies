@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 
+
 class PrommiesForm(forms.ModelForm):
     class Meta:
         model = Prommies
@@ -25,3 +26,8 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "email", "password1", "password2"]
+
+# class RateForm(forms.ModelForm):
+#     class Meta:
+#         model = Review
+#         fields = ['review', 'score']
