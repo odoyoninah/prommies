@@ -28,15 +28,42 @@
 </head>
 <body>
     {% include "navbar.html" %}  
-{% if user. is_authenticated %}  
-<h2>{% block title %}Profile {% endblock %}</h2>  
-<p>Username: {{ user}}</p>
-<p>Email: {{ user.email}}</p>
-
+<header>
+    <h1>Profile Page</h1>
+    <button type="button">
+    <a href="{% url 'index' %}"class="logo">Prommies</a>
+</button>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="profile-pic">
+                <img src="https://images.unsplash.com/photo-1535551951406-a19828b0a76b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8YW5pbWF0aW9uc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="profile">
+            </div>
+<main class="pf">
     
-    {% else %}
-    <h2>Login to view your details</h2>
-    {% endif %}
+    <div class="info">
+
+        <div class="user-box">
+            <form class="user-info" action="{% url 'profile' %}" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}">
+        </div>
+    </div><br>
+    <button type="submit">
+        <h4>
+            <a class="logout" href="{% url 'login' %}">Logout</a>
+        </h4>
+
+    </button>
+</main>
+        
+
     
 </body>
 </html>

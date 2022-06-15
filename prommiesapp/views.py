@@ -44,11 +44,10 @@ def apikey(request):
     return render(request,'apikey.html')
 
 def profile(request):
-    context = {
-        'user': request.user,
-        'profile': request.user.profile
-    }
-    return render(request, 'profile.html', context)
+    if request.user.is_authenticated:
+        return render(request,'profile.html')
+    else:
+        return redirect('login')
     
 
 
