@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIKEY</title>
+    <title>APIENDPOINT</title>
 
     {% block styles %}
     <link
@@ -32,21 +32,35 @@
     {% include "navbar.html" %}
     <div class="api">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Project ApiKey</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-secondary">Copy</a>
+              <h5 class="card-title">Project ApiEndpoint</h5>
+              <p class="card-text">{
+                "name": "Instaclone",
+                "description": "A clone of the instagram app where users get to post their photos,get to see other photos ,like and comment on the photos.",
+                "score": 25,
+                "image": "/media/images/mourizal-zativa-_rSRv9T98G4-unsplash_MRs5x2a.jpg",
+                "email": "odoyoninah@gmail.com",
+                "url": "http://ninsclone.herokuapp.com/"
+            },.</p>
+              <a href="{% url 'apikey' %}" class="btn btn-secondary">Copy</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Profile ApiKey</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-secondary">Copy</a>
+              <h5 class="card-title">Profile ApiEndpoint</h5>
+              <p class="card-text">{
+                "user": 2,
+                "image": "/media/profile_pics/default.jpg",
+                "bio": "Dog lover!",
+                "birth_date": "1998-07-04",
+                "mobile": "0792408121",
+                "project": 4
+            }</p>
+              <a href="{% url 'apikey' %}" class="btn btn-secondary">Copy</a>
             </div>
           </div>
         </div>

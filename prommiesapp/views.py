@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import Prommies, User
+from .models import Profile, Prommies, User
 from .forms import PrommiesForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
@@ -36,12 +36,32 @@ class PrommiesView(APIView):
             return Response(serializers.data, status=status.HTTP_201_CREATED)
         return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class ProfileView(APIView):
+     #APIView as a base class for our API view function.
+    def get(self, request, format=None):
+        #define a get method where we query the database to get all the MoringaMerchobjects
+        all_profile = Profile.objects.all()
+        #serialize the Django model objects and return the serialized data as a response.
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
+
+
+    def post(self, request, format=None):
+        # post method will be triggered when we are getting form data
+        serializers = ProfileSerializer(data=request.data)
+        # serialize the data in the request
+        if serializers.is_valid():
+            # If valid we save the new data to the database and return the appropriate status code.
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 def index(request):
     prommies=Prommies.objects.all()
     return render(request,'index.html',{'form':Form})
 
-def apikey(request):
-    return render(request,'apikey.html')
+
 
 def profile(request):
     if request.user.is_authenticated:
@@ -49,6 +69,8 @@ def profile(request):
     else:
         return redirect('login')
     
+def apikey(request):
+    return render(request,'apikey.html')
 
 
 
