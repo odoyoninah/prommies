@@ -1,6 +1,21 @@
 .prom{
-    background-color: #f5f5f5;
+    background-color: #e4aec5cb;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    text-align: center;
+}
+.pjct{
+    background-color: #e4aec5c9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.ies{
+    background-color: #e4aec5c9;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
