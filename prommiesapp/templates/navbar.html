@@ -16,7 +16,7 @@
 <div class="navbar">
   <nav class="navbar navbar-secondary bg-secondary secondary-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Pro-Nav</a>
+      <a class="navbar-brand" href="{% url 'index' %}">Pro-Nav</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,13 +42,11 @@
                 <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
                 
                 <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+                <li><a class="dropdown-item" href="{% url 'apikey' %}">Get ApiKey</a></li>
               </ul>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          
         </div>
       </div>
     </div>

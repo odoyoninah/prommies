@@ -38,6 +38,9 @@ class PrommiesView(APIView):
 def index(request):
     prommies=Prommies.objects.all()
     return render(request,'index.html',{'form':Form})
+
+def apikey(request):
+    return render(request,'apikey.html')
     
 
 
