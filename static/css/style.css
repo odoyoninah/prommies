@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
 }
-.ies{
+/* .ies{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,7 +52,7 @@
     justify-content: center;
     align-items: center;
 
-}
+} */
 .om{
     background-image: url("https://images.unsplash.com/photo-1541450805268-4822a3a774ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdlYnNpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
     background-size: cover;

@@ -74,7 +74,8 @@ def apikey(request):
 
 
 def projects(request):
-    return render(request,'projects.html')
+    prommies = Prommies.objects.all()
+    return render(request,'projects.html',{'prommies':prommies})
 
 
 
