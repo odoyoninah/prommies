@@ -108,6 +108,14 @@ def signup(request):
         form = RegisterForm()
     return render(request,'registration/signup.html',{'form':form})
 
+def search_name(request):
+    if 'search' in request.GET and request.GET['search']:
+        search_name = request.GET.get('search')
+        prommies = Prommies.get_prommies(search_name)
+        # message = f'{search_name}'
+
+        return render(request,'search.html',{'prommies':prommies})
+
     
 def logout(request):
     logout(request)

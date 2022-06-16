@@ -30,6 +30,11 @@ class Prommies(models.Model):
     def __str__(self):
         return self.name
 
+@classmethod
+def get_prommies(cls,search_name):
+    prommies = cls.objects.filter(name__icontains=search_name)
+    return prommies
+
 class Profile(models.Model):
     user = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/', default='images/default.png')

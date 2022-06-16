@@ -1,7 +1,7 @@
 from collections import UserDict
 from django.test import TestCase
 
-from prommiesapp.models import Prommies
+from prommiesapp.models import Profile, Prommies
 
 # Create your tests here.
 class PrommiesTest(TestCase):
@@ -17,6 +17,11 @@ class PrommiesTest(TestCase):
 
     def test_update_prommies(self):
         self.assertTrue(self.prommies.update_prommies(self.prommies))
+
+class ProfileTest(TestCase):
+    def setUp(self):
+        self.user = UserDict.objects.create_user(username='testuser', password='12345')
+        self.profile = Profile.objects.create(user=self.user, image='images/default.png', bio='This is your bio', birth_date='2020-01-01', mobile='123456789')
 
     def test_save_profile(self):
         self.assertTrue(self.profile.save_profile())
