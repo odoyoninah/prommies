@@ -17,6 +17,7 @@ urlpatterns = [
     path('apikey/',views.apikey,name='apikey'),
     path('profile/',views.profile,name='profile'),
     path('projects/',views.projects,name='projects'),
+    path('search/',views.search_name,name='search'),
 ]
 
 if settings.DEBUG:

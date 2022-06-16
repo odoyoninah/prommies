@@ -31,9 +31,9 @@ class Prommies(models.Model):
         return self.name
 
 @classmethod
-def get_prommies(cls,search_name):
-    prommies = cls.objects.filter(name__icontains=search_name)
-    return prommies
+def get_name(cls,search_name):
+    searches = cls.objects.filter(name__icontains=search_name)
+    return searches
 
 class Profile(models.Model):
     user = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)

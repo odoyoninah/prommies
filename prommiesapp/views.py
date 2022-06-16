@@ -6,15 +6,15 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import Profile, Prommies, User
+from .models import *
 from .forms import PrommiesForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 #handle all the status code responses.
-from .models import Prommies
 from .serializer import PrommiesSerializer, ProfileSerializer
+
 
 class PrommiesView(APIView):
      #APIView as a base class for our API view function.
@@ -111,7 +111,7 @@ def signup(request):
 def search_name(request):
     if 'search' in request.GET and request.GET['search']:
         search_name = request.GET.get('search')
-        prommies = Prommies.get_prommies(search_name)
+        my_search_results = Prommies.get_
         # message = f'{search_name}'
 
         return render(request,'search.html',{'prommies':prommies})
