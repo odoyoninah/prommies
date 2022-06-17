@@ -1,0 +1,1 @@
+web: gunicorn prommies.wsgi --log-file -
