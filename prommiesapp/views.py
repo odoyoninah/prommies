@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import *
+from prommiesapp.models import Prommies,Profile
 from .forms import PrommiesForm, RegisterForm
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
@@ -112,7 +112,7 @@ def search_name(request):
     if 'search' in request.GET and request.GET['search']:
         search_name = request.GET.get('search')
         my_search_results = Prommies.get_name(search_name)
-        return render(request,'search.html',{'my_search_results':my_search_results})
+        return render(request,'search.html',{'results':my_search_results})
 
     else:
         message = 'You have not searched for anything'

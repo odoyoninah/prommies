@@ -30,10 +30,10 @@ class Prommies(models.Model):
     def __str__(self):
         return self.name
 
-@classmethod
-def get_name(cls,search_name):
-    searches = cls.objects.filter(name__icontains=search_name)
-    return searches
+    @classmethod
+    def get_name(cls,search_name):
+        searches = cls.objects.filter(name__icontains=search_name)
+        return searches
 
 class Profile(models.Model):
     user = models.OneToOneField(User,primary_key=True, on_delete=models.CASCADE)

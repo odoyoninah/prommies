@@ -12,7 +12,7 @@ urlpatterns = [
     path('logout/', views.logout, name='logout'),
     path('account/', include('django.contrib.auth.urls')), 
     path('uploadproject/', views.uploadproject, name='uploadproject'),
-    path('api/prommies/',views.PrommiesView.as_view()),
+    path('api/prommies/',views.PrommiesView.as_view(),name='api-prommies'),
     path('api/profile/',views.ProfileView.as_view()),
     path('apikey/',views.apikey,name='apikey'),
     path('profile/',views.profile,name='profile'),
