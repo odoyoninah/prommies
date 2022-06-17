@@ -111,10 +111,12 @@ def signup(request):
 def search_name(request):
     if 'search' in request.GET and request.GET['search']:
         search_name = request.GET.get('search')
-        my_search_results = Prommies.get_
-        # message = f'{search_name}'
+        my_search_results = Prommies.get_name(search_name)
+        return render(request,'search.html',{'my_search_results':my_search_results})
 
-        return render(request,'search.html',{'prommies':prommies})
+    else:
+        message = 'You have not searched for anything'
+        return render(request,'search.html',{'message':message})
 
     
 def logout(request):
